@@ -2,7 +2,7 @@
 
 ### 1. Architecture
 
-![01_architecture](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\01_architecture.png)
+![01_architecture](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/01_architecture.png)
 
 - `Hub Cluster` : Hub Cluster는 RHACM을 실행하는 한 가지만 수행합니다. 클러스터 수명 주기, 애플리케이션 수명 주기, 거버넌스, 위험 및 규정 준수(GRC) 기능을 제공하는 모든 RHACM 구성요소는 이 클러스터에서 실행됩니다. Hub Cluster를 관리 할 수는 없습니다. Hub Cluster를 관리되는 클러스터로 추가하면 오류 메시지가 표시되고 해당 작업이 금지됩니다.
 - `Managed Cluster` : Managed Cluster는 워크로드를 실행하는 클러스터입니다. 고객 애플리케이션 워크로드는 분명 여기에서 실행되지만 Managed Cluster도 RHACM 엔드포인트 구성요소를 실행합니다. 이러한 엔드포인트 구성요소는 Pod 로 배포되고 다른 애플리케이션과 마찬가지로 클러스터의 노드에서 실행되도록 예약됩니다.
@@ -65,50 +65,50 @@ RHACM 2.4 Operator를 설치하기 위해서는 OpenShift Cluster 준비되어 �
 
   - OpenShift Console 접속 > Operator Hub > Red Hat Advanced Management for Kubernetes Operator 검색 > 설치
 
-    ![04_rhacm_operator](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\04_rhacm_operator.png)
+    ![04_rhacm_operator](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/04_rhacm_operator.png)
     
   - **Install** 버튼을 선택하여 설치를 계속 진행합니다.
   
-    ![05_rhacm_operator_install](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\05_rhacm_operator_install.png)
+    ![05_rhacm_operator_install](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/05_rhacm_operator_install.png)
   
   - 기본으로 선택된 정보를 그대로 두고 설치를 계속 진행합니다.
   
-    ![06_rhacm_operator_install_processing](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\06_rhacm_operator_install_processing.png)
+    ![06_rhacm_operator_install_processing](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/06_rhacm_operator_install_processing.png)
   
   - 설치가 완료되면 **open-cluster-management** 네임스페이스에 Operator가 설치된 것을 확인할 수 있습니다.
   
-    ![07_rhacm_operator_install_success](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\07_rhacm_operator_install_success.png)
+    ![07_rhacm_operator_install_success](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/07_rhacm_operator_install_success.png)
   
   - **RHACM Operator**가 설치된 OpenShift Cluster를 RHACM Hub Cluster로 사용하기 위해서 **MultiClusterHub** 인스턴스를 생성합니다.
   
   - **open-cluster-management** 프로젝트 선택 > **Installed Operators** > **RHACM Operator 선택** > **MultiClusterHub 인스턴스 생성**
   
-    ![08_multiclusterhub](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\08_multiclusterhub.png)
+    ![08_multiclusterhub](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/08_multiclusterhub.png)
   
   - Name 항목을 알맞게 입력하고 Create 버튼을 선택하여 인스턴스를 구성합니다.
   
-    ![09_create_multiclusterhub](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\09_create_multiclusterhub.png)
+    ![09_create_multiclusterhub](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/09_create_multiclusterhub.png)
   
   - OpenShift Cluster Console에서 **Workloads** > **Pods** 확인 시 새로운 Container들이 생성되는 것을 실시간으로 확인할 수 있으며, 전체적으로 리소스가 다 올라오는 데 시간이 조금 소요 될 수 있습니다.
   
-    ![10_resource_pod_mon](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\10_resource_pod_mon.png)
+    ![10_resource_pod_mon](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/10_resource_pod_mon.png)
   
   - 인스턴스 배포가 완료되면 다음과 같이 **MultiClusterHubs**의 상태가 **Running**으로 변경되게 됩니다.
   
-    ![11_rhacm_multiclusterhub_success](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\11_rhacm_multiclusterhub_success.png)
+    ![11_rhacm_multiclusterhub_success](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/11_rhacm_multiclusterhub_success.png)
   
   - 이제, OpenShift Console Main 화면의 왼쪽 맨위의 기어 모양을 선택하면 **Advanced Cluster Management(RHACM) Console**에 접속할 수 있게 됩니다. 그림에서 보이는 것처럼 **Advanced Cluster Management** 항목이 새로 추가된 것을 볼 수 있습니다.
   
-    ![12_rhacm_console](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\12_rhacm_console.png)
+    ![12_rhacm_console](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/12_rhacm_console.png)
   
   - Overview 화면
   
     RHACM의 콘솔에 접속한 화면입니다. 현재는 `local-cluster` 인 **Hub Cluster**의 정보만 보이게 되고, **Managed Cluster**를 추가하거나 기존 Cluster를 **import**하게 되면 **Hub Cluster**에서 관리되는 OpenShift Cluster를 확인 할 수 있습니다.
   
-    ![13_rhacm_overview](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\13_rhacm_overview.png)
+    ![13_rhacm_overview](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/13_rhacm_overview.png)
   
   - Cluster 정보
   
-    ![14_rhacm_clusters](C:\Works\01_자료\01_OCP\05_OCP_Demo_hyou\RHACM\14_rhacm_clusters.png)
+    ![14_rhacm_clusters](https://github.com/justone0127/RHACM-Overview-and-Operator-Install/blob/main/14_rhacm_clusters.png)
 
 > 간단하게 정리하면, OpenShift 환경에서는 중앙에서 여러  Clsuter를 관리하는 솔루션인 RHACM을 Operator를 통해 쉽게 설치할 수 있습니다.  제공되는 기능으로는 Cluster를 생성, 삭제, 파괴 및 Application 배포, Governance를 중앙에서 일괄적으로 제어 할 수 있습니다.
